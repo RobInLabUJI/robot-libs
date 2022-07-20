@@ -25,3 +25,35 @@ RUN apt-get update && \
     libpcl-dev && \ 
     rm -rf /var/lib/apt/lists/*
 
+RUN git clone https://github.com/dorian3d/DBoW2.git && \
+    cd DBoW2 && mkdir build && cd build && cmake ../ && make install && \
+    cd ../.. && rm -fr DBoW2
+
+RUN git clone https://github.com/laurentkneip/opengv.git && \
+    cd opengv && mkdir build && cd build && cmake ../ && make install && \
+    cd ../.. && rm -fr opengv
+
+RUN git clone https://github.com/strasdat/Sophus.git && \
+    cd Sophus && mkdir build && cd build && cmake ../ && make install && \
+    cd ../.. && rm -fr Sophus
+
+RUN cd /usr/local/include && \
+    wget https://github.com/cnr-isti-vclab/vcglib/archive/refs/tags/2022.02.tar.gz && \
+    tar xf 2022.02.tar.gz && rm 2022.02.tar.gz && \
+    cd /usr/local/include && ln -s vcglib-2022.02 vcg
+
+RUN apt-get update && \
+    apt-get install -y \
+    libdart-all-dev && \ 
+    rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && \
+    apt-get install -y \
+    ninja-build && \ 
+    rm -rf /var/lib/apt/lists/*
+
+RUN git clone --recursive https://github.com/stevenlovegrove/Pangolin.git && \
+    cd Pangolin && cmake -B build -GNinja && cmake --build build && \
+    cmake --install build && cd .. && rm -fr Pangolin
+
+
