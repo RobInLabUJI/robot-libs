@@ -56,4 +56,3 @@ RUN git clone --recursive https://github.com/stevenlovegrove/Pangolin.git && \
     cd Pangolin && cmake -B build -GNinja && cmake --build build && \
     cmake --install build && cd .. && rm -fr Pangolin
 
-
