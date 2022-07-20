@@ -44,12 +44,12 @@ RUN cd /usr/local/include && \
 
 RUN apt-get update && \
     apt-get install -y \
-    libdart-all-dev && \ 
+    libdart-all-dev && \
     rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && \
     apt-get install -y \
-    ninja-build && \ 
+    ninja-build && \
     rm -rf /var/lib/apt/lists/*
 
 RUN git clone --recursive https://github.com/stevenlovegrove/Pangolin.git && \
