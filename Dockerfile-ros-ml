@@ -113,3 +113,21 @@ RUN pip3 install torch torchvision torchaudio --extra-index-url https://download
 
 RUN pip3 install tensorflow
 
+### NVBIO
+
+RUN git clone https://github.com/NVlabs/nvbio.git && \
+    cd nvbio && mkdir build && cd build && cmake ../ && make -j8 install && \
+    cd ../.. && rm -fr nvbio
+
+### PyBullet
+
+RUN pip3 install pybullet
+
+### MuJoCo
+
+RUN pip3 install mujoco
+
+### Gym
+
+RUN pip3 install gym
+
