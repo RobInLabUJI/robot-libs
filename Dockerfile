@@ -56,3 +56,19 @@ RUN git clone --recursive https://github.com/stevenlovegrove/Pangolin.git && \
     cd Pangolin && cmake -B build -GNinja && cmake --build build && \
     cmake --install build && cd .. && rm -fr Pangolin
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+### PyBullet
+
+RUN pip3 install pybullet==3.2.5
+
+### MuJoCo
+
+RUN pip3 install mujoco==2.2.1
+
+### Gym
+
+RUN pip3 install gym==0.25.0
+

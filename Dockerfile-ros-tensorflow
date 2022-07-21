@@ -1,0 +1,4 @@
+FROM robinlab/robot-libs-ros-cuda:20.04
+
+RUN pip3 install tensorflow==2.9.1
+

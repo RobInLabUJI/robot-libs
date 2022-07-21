@@ -100,34 +100,9 @@ RUN apt-mark hold ${NV_LIBCUBLAS_DEV_PACKAGE_NAME} ${NV_LIBNCCL_DEV_PACKAGE_NAME
 
 ENV LIBRARY_PATH /usr/local/cuda/lib64/stubs
 
-
-### PYTORCH
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3-pip \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
-
-### TENSORFLOW
-
-RUN pip3 install tensorflow
-
 ### NVBIO
 
 RUN git clone https://github.com/NVlabs/nvbio.git && \
     cd nvbio && mkdir build && cd build && cmake ../ && make -j8 install && \
     cd ../.. && rm -fr nvbio
-
-### PyBullet
-
-RUN pip3 install pybullet==3.2.5
-
-### MuJoCo
-
-RUN pip3 install mujoco==2.2.1
-
-### Gym
-
-RUN pip3 install gym==0.25.0
 
