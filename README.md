@@ -2,9 +2,9 @@
 
 Docker images for robotics and AI software:
 * Libraries (Ceres, CGAL, DART, DBoW2, g2o, GLFW, NLopt, MuJoCo, OMPL, OpenCV, OpenGV, OpenMP, Pangolin, PCL, PyBullet, Sophus, VCG)
-* ROS
-* TensorFlow
-* Torch
+* ROS (desktop-full)
+* TensorFlow (with CUDA)
+* Torch (with CUDA)
 
 Supported images: Ubuntu (amd64) 16.04, 18.04, 20.04.
 
