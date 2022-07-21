@@ -1,0 +1,10 @@
+FROM robinlab/robot-libs-ros-cuda:16.04
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3-dev python3-setuptools \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN python3 -m pip install --upgrade "pip < 21.0"
+
+RUN python3 -m pip install torch==1.5.1 torchvision==0.6.1
+
