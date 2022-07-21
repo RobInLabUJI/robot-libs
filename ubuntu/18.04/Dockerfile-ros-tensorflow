@@ -1,0 +1,6 @@
+FROM robinlab/robot-libs-ros-cuda:18.04
+
+RUN pip3 install tensorflow==2.9.1
+
+RUN cd /usr/bin && rm python3 && ln -s python3.7 python3
+
